@@ -1,0 +1,9 @@
+[color]
+	ui = auto
+[user]
+	name = Yachi Lo
+	email = yaachi@gmail.com
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore
