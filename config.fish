@@ -16,6 +16,9 @@ set fish_plugins bundler gi rbenv
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
 
+# init rbenv
+. (rbenv init -|psub)
+
 # alt+. = last argument
 function fish_user_key_bindings
     bind \e. 'history-token-search-backward'
