@@ -29,3 +29,5 @@ end
 function fish_prompt
     python2.7 ~/.powerline-shell.py $status --shell bare ^/dev/null
 end
+
+. ~/.config/fish/functions/git.fish
