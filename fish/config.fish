@@ -31,3 +31,4 @@ function fish_prompt
 end
 
 . ~/.config/fish/functions/git.fish
+git_aliases
