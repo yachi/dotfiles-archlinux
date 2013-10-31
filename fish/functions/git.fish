@@ -4,4 +4,5 @@ function git_aliases
   alias gp "git push"
   alias gc "git commit"
   alias gca "git commit -a"
+  alias gco "git checkout"
 end
