@@ -19,6 +19,9 @@ set fish_plugins bundler gi rbenv
 # init rbenv
 . (rbenv init -|psub)
 
+# solarized dircolors
+eval (dircolors -c /etc/dir_colors | sed 's/env/ -x/')
+
 # alt+. = last argument
 function fish_user_key_bindings
     bind \e. 'history-token-search-backward'
