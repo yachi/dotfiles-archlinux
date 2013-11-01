@@ -30,6 +30,14 @@ function fish_prompt
     python2.7 ~/.powerline-shell.py $status --shell bare ^/dev/null
 end
 
+function vim
+  if count $argv > /dev/null
+    env vim $argv
+  else
+    env vim .
+  end
+end
+
 # abbreviations
 set -U fish_user_abbreviations 'v=vim'
 set fish_user_abbreviations $fish_user_abbreviations 'g=git'
