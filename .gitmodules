@@ -1,0 +1,3 @@
+[submodule ".janus/vim-fish"]
+	path = .janus/vim-fish
+	url = https://github.com/dag/vim-fish.git
