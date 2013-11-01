@@ -1,3 +1,6 @@
 [submodule ".janus/vim-fish"]
 	path = .janus/vim-fish
 	url = https://github.com/dag/vim-fish.git
+[submodule ".janus/vim-airline"]
+	path = .janus/vim-airline
+	url = https://github.com/bling/vim-airline.git
