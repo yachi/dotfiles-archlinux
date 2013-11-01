@@ -30,5 +30,14 @@ function fish_prompt
     python2.7 ~/.powerline-shell.py $status --shell bare ^/dev/null
 end
 
-. ~/.config/fish/functions/git.fish
-git_aliases
+# abbreviations
+set -U fish_user_abbreviations 'v=vim'
+set fish_user_abbreviations $fish_user_abbreviations 'g=git'
+set fish_user_abbreviations $fish_user_abbreviations 'gst=git status'
+set fish_user_abbreviations $fish_user_abbreviations 'gd=git diff'
+set fish_user_abbreviations $fish_user_abbreviations 'gp=git push'
+set fish_user_abbreviations $fish_user_abbreviations 'gc=git commit -v'
+set fish_user_abbreviations $fish_user_abbreviations 'gca=git commit -av'
+set fish_user_abbreviations $fish_user_abbreviations 'gco=git checkout'
+set fish_user_abbreviations $fish_user_abbreviations 'sc=systemctl'
+set fish_user_abbreviations $fish_user_abbreviations 'ssc=sudo systemctl'
