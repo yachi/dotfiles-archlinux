@@ -32,10 +32,13 @@ eval (dircolors -c /etc/dir_colors | sed 's/env/ -x/')
 function fish_user_key_bindings
     bind \e. 'history-token-search-backward'
 end
+
+# powerline shell
 function fish_prompt
     python2.7 ~/.powerline-shell.py $status --shell bare ^/dev/null
 end
 
+# vim default open dir
 function vim
   if count $argv > /dev/null
     env vim $argv
@@ -43,6 +46,9 @@ function vim
     env vim .
   end
 end
+
+# CCACHE
+set USE_CCACHE 1
 
 # abbreviations
 set -U fish_user_abbreviations 'v=vim'
