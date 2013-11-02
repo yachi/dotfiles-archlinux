@@ -16,6 +16,12 @@ set fish_plugins bundler gi rbenv
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
 
+# set paths
+set PATH ~/.local/bin $PATH
+
+# init virtualfish
+source ~/github/dotfiles/virtualfish/virtual.fish
+
 # init rbenv
 . (rbenv init -|psub)
 
