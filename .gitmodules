@@ -7,3 +7,6 @@
 [submodule "virtualfish"]
 	path = virtualfish
 	url = https://github.com/adambrenecki/virtualfish.git
+[submodule "powerline-shell"]
+	path = powerline-shell
+	url = https://github.com/milkbikis/powerline-shell
