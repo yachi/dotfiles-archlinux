@@ -48,7 +48,8 @@ function vim
 end
 
 # CCACHE
-set USE_CCACHE 1
+set -x USE_CCACHE 1
+set -x MAKEFLAGS -j8
 
 # abbreviations
 set -U fish_user_abbreviations 'v=vim'
