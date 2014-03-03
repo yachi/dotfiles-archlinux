@@ -47,9 +47,10 @@ function vim
   end
 end
 
-# CCACHE
+# random values
 set -x USE_CCACHE 1
 set -x MAKEFLAGS -j8
+set -x TERM screen-256color-bce
 
 # abbreviations
 set -U fish_user_abbreviations 'v=vim'
