@@ -10,3 +10,9 @@
 [submodule "powerline-shell"]
 	path = powerline-shell
 	url = https://github.com/milkbikis/powerline-shell
+[submodule ".janus/Dockerfile.vim"]
+	path = .janus/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule ".janus/vim-exchange"]
+	path = .janus/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange.git
