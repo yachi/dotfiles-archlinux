@@ -14,16 +14,17 @@ set fish_plugins bundler gi rbenv
 #set fish_custom $HOME/dotfiles/oh-my-fish
 
 # Load oh-my-fish configuration.
-. $fish_path/oh-my-fish.fish
+source $fish_path/oh-my-fish.fish
 
 # set paths
 set PATH ~/.local/bin $PATH
+set PATH /opt/android-sdk/platform-tools $PATH
 
 # init virtualfish
 source ~/github/dotfiles/virtualfish/virtual.fish
 
 # init rbenv
-. (rbenv init -|psub)
+source (rbenv init -|psub)
 
 # solarized dircolors
 eval (dircolors -c /etc/dir_colors | sed 's/env/ -x/')
@@ -44,6 +45,14 @@ function vim
     env vim $argv
   else
     env vim .
+  end
+end
+
+function adbpush
+  set d /sdcard/Download/
+  for f in $argv
+    echo "pushing $f to $d..."
+    adb -d push $f $d
   end
 end
 
