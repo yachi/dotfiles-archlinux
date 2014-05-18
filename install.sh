@@ -4,7 +4,4 @@
 
 ln -svf $(realpath ./.gitconfig) ~/.gitconfig
 ln -svf $(realpath ./.gemrc) ~/
-ln -svf $(realpath ./.janus) ~/
 ln -svf $(realpath ./.aria2) ~/
-ln -svf $(realpath ./.janus/.vimrc.after) ~/
-ln -svf $(realpath ./.janus/.vimrc.before) ~/

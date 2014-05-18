@@ -1,18 +1,6 @@
-[submodule ".janus/vim-fish"]
-	path = .janus/vim-fish
-	url = https://github.com/dag/vim-fish.git
-[submodule ".janus/vim-airline"]
-	path = .janus/vim-airline
-	url = https://github.com/bling/vim-airline.git
 [submodule "virtualfish"]
 	path = virtualfish
 	url = https://github.com/adambrenecki/virtualfish.git
 [submodule "powerline-shell"]
 	path = powerline-shell
 	url = https://github.com/milkbikis/powerline-shell
-[submodule ".janus/Dockerfile.vim"]
-	path = .janus/Dockerfile.vim
-	url = https://github.com/ekalinin/Dockerfile.vim.git
-[submodule ".janus/vim-exchange"]
-	path = .janus/vim-exchange
-	url = https://github.com/tommcdo/vim-exchange.git
