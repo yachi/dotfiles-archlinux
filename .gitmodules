@@ -7,3 +7,6 @@
 [submodule "dotvim"]
 	path = dotvim
 	url = https://github.com/yachi/dotvim.git
+[submodule "z-fish"]
+	path = z-fish
+	url = https://github.com/roryokane/z-fish.git

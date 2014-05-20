@@ -20,6 +20,9 @@ source $fish_path/oh-my-fish.fish
 set PATH ~/.local/bin $PATH
 set PATH /opt/android-sdk/platform-tools $PATH
 
+# init z
+source ~/github/dotfiles/z-fish/z.fish
+
 # init virtualfish
 source ~/github/dotfiles/virtualfish/virtual.fish
 
