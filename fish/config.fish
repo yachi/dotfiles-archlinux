@@ -51,6 +51,14 @@ function vim
   end
 end
 
+function gmd
+  git branch --merged | grep "/"
+end
+
+function gmdd
+  gmd | xargs git branch -d
+end
+
 function adbpush
   set d /sdcard/Download/
   for f in $argv
@@ -62,7 +70,7 @@ end
 # random values
 set -x USE_CCACHE 1
 set -x MAKEFLAGS -j8
-set -x TERM screen-256color-bce
+set -gx TERM screen-256color
 
 # abbreviations
 set -U fish_user_abbreviations 'v=vim'
@@ -75,5 +83,6 @@ set fish_user_abbreviations $fish_user_abbreviations 'gc=git commit -v'
 set fish_user_abbreviations $fish_user_abbreviations 'gca=git commit -av'
 set fish_user_abbreviations $fish_user_abbreviations 'gco=git checkout'
 set fish_user_abbreviations $fish_user_abbreviations 'gup=git pull --rebase'
+set fish_user_abbreviations $fish_user_abbreviations 'gfg=git ls-files|grep'
 set fish_user_abbreviations $fish_user_abbreviations 'sc=systemctl'
 set fish_user_abbreviations $fish_user_abbreviations 'ssc=sudo systemctl'
