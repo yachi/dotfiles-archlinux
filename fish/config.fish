@@ -86,3 +86,7 @@ set fish_user_abbreviations $fish_user_abbreviations 'gup=git pull --rebase'
 set fish_user_abbreviations $fish_user_abbreviations 'gfg=git ls-files|grep'
 set fish_user_abbreviations $fish_user_abbreviations 'sc=systemctl'
 set fish_user_abbreviations $fish_user_abbreviations 'ssc=sudo systemctl'
+
+# osx pbcopy
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
