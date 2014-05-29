@@ -68,6 +68,7 @@ function adbpush
 end
 
 # random values
+set -x EDITOR vim
 set -x USE_CCACHE 1
 set -x MAKEFLAGS -j8
 set -gx TERM screen-256color
