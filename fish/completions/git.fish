@@ -1,0 +1,1 @@
+/home/yachi/github/dotfiles/git-flow-completion/git.fish

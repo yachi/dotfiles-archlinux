@@ -10,3 +10,6 @@
 [submodule "z-fish"]
 	path = z-fish
 	url = https://github.com/roryokane/z-fish.git
+[submodule "git-flow-completion"]
+	path = git-flow-completion
+	url = https://github.com/petervanderdoes/git-flow-completion.git
