@@ -8,7 +8,7 @@ set fish_path $HOME/.oh-my-fish
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
-set fish_plugins bundler gi rbenv
+set fish_plugins bundler gi rbenv extract
 
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
@@ -52,11 +52,11 @@ function vim
 end
 
 function gmd
-  git branch --merged | grep "/"
+  git checkout develop; and git fetch --prune; and git rebase; and git branch --merged | grep "/"
 end
 
 function gmdd
-  gmd | xargs git branch -d
+  git branch --merged | grep "\b/\b" | xargs -r git branch -d
 end
 
 function adbpush
