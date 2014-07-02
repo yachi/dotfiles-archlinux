@@ -52,7 +52,7 @@ function vim
 end
 
 function gmd
-  git checkout develop; and git fetch --prune; and git rebase; and git branch --merged | grep "/"
+  git checkout develop; and git fetch --prune; and git rebase; and git branch --merged | grep "\w\+/\w\+"
 end
 
 function gmdd
@@ -96,3 +96,12 @@ set fish_user_abbreviations $fish_user_abbreviations 'ssc=sudo systemctl'
 # osx pbcopy
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+
+# git wip
+function work_in_progress
+  if git log -n 1 | grep -q -c wip; then
+    echo "WIP!!"
+  end
+end
+alias gwip='git add -A; git ls-files --deleted -z | xargs -r -0 git rm; git commit -m "wip"'
+alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'

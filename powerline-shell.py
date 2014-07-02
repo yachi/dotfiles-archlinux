@@ -63,7 +63,7 @@ class Powerline:
 
     def draw(self):
         return (''.join(self.draw_segment(i) for i in range(len(self.segments)))
-                + self.reset).encode('utf-8')
+                + self.reset).encode('utf-8') + ' '
 
     def draw_segment(self, idx):
         segment = self.segments[idx]
@@ -271,7 +271,7 @@ def add_hostname_segment():
         hostname = gethostname()
         FG, BG = stringToHashToColorAndOpposite(hostname)
         FG, BG = (rgb2short(*color) for color in [FG, BG])
-        host_prompt = ' %s' % hostname.split('.')[0]
+        host_prompt = ' %s ' % hostname.split('.')[0]
 
         powerline.append(host_prompt, FG, BG)
     else:
@@ -297,6 +297,25 @@ def add_ssh_segment():
         powerline.append(' %s ' % powerline.network, Color.SSH_FG, Color.SSH_BG)
 
 add_ssh_segment()
+
+
+import subprocess
+
+
+def add_ruby_version_segment():
+    try:
+        p1 = subprocess.Popen(["ruby", "-v"], stdout=subprocess.PIPE)
+        p2 = subprocess.Popen(["sed", "s/ (.*//"], stdin=p1.stdout, stdout=subprocess.PIPE)
+        version = p2.communicate()[0].rstrip()
+        if os.environ.has_key("GEM_HOME"):
+          gem = os.environ["GEM_HOME"].split("@")
+          if len(gem) > 1:
+            version += " " + gem[1]
+        powerline.append(" " + version + " ", 15, 1)
+    except OSError:
+        return
+
+add_ruby_version_segment()
 
 
 import os

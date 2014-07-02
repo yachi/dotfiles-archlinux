@@ -1,9 +1,6 @@
 [submodule "virtualfish"]
 	path = virtualfish
 	url = https://github.com/adambrenecki/virtualfish.git
-[submodule "powerline-shell"]
-	path = powerline-shell
-	url = https://github.com/milkbikis/powerline-shell
 [submodule "dotvim"]
 	path = dotvim
 	url = https://github.com/yachi/dotvim.git
@@ -13,3 +10,6 @@
 [submodule "git-flow-completion"]
 	path = git-flow-completion
 	url = https://github.com/petervanderdoes/git-flow-completion.git
+[submodule "powerline-shell"]
+	path = powerline-shell
+	url = https://github.com/qwindelzorf/powerline-shell
