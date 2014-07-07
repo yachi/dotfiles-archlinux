@@ -105,3 +105,5 @@ function work_in_progress
 end
 alias gwip='git add -A; git ls-files --deleted -z | xargs -r -0 git rm; git commit -m "wip"'
 alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'
+
+set fish_user_abbreviations $fish_user_abbreviations 'pie=perl -p -i -e "s###g"'
