@@ -8,7 +8,7 @@ set fish_path $HOME/.oh-my-fish
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
-set fish_plugins bundler gi rbenv extract
+set fish_plugins bundler gi extract
 
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
@@ -23,11 +23,11 @@ set PATH /opt/android-sdk/platform-tools $PATH
 # init z
 source ~/github/dotfiles/z-fish/z.fish
 
+# init fry
+source /usr/share/fry/fry.fish
+
 # init virtualfish
 source ~/github/dotfiles/virtualfish/virtual.fish
-
-# init rbenv
-source (rbenv init -|psub)
 
 # solarized dircolors
 eval (dircolors -c /etc/dir_colors | sed 's/env/ -x/')
