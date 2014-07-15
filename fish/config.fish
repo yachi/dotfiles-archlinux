@@ -24,7 +24,7 @@ set PATH /opt/android-sdk/platform-tools $PATH
 source ~/github/dotfiles/z-fish/z.fish
 
 # init fry
-source /usr/share/fry/fry.fish
+source /usr/share/fish/fry.fish
 
 # init virtualfish
 source ~/github/dotfiles/virtualfish/virtual.fish
