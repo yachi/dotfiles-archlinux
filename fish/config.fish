@@ -19,6 +19,7 @@ source $fish_path/oh-my-fish.fish
 # set paths
 set PATH ~/.local/bin $PATH
 set PATH /opt/android-sdk/platform-tools $PATH
+set PATH /opt/google-cloud-sdk/bin $PATH
 
 # init z
 source ~/github/dotfiles/z-fish/z.fish
@@ -71,6 +72,7 @@ end
 set -x EDITOR vim
 set -x USE_CCACHE 1
 set -x MAKEFLAGS -j8
+set -x CLOUDSDK_PYTHON /usr/bin/python2
 set -gx TERM screen-256color
 
 # abbreviations
