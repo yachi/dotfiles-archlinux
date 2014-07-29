@@ -8,3 +8,6 @@ source ~/.vim/vimrc
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep= "\ue0b0"
+
+set relativenumber 
+set number
