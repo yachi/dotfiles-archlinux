@@ -6,7 +6,7 @@
 [push]
 	default = simple
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /home/yachi/.gitignore
 	editor = vim
 [pager]
   log  = /usr/share/git/diff-highlight/diff-highlight | less

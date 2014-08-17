@@ -3,6 +3,7 @@
 [ -L ~/.config/fish ] || ln -svf $(realpath ./fish) ~/.config/fish
 
 ln -svf $(realpath ./.gitconfig) ~/.gitconfig
+ln -svf $(realpath ./.gitignore) ~/.gitignore
 ln -svf $(realpath ./.gemrc) ~/
 ln -svf $(realpath ./.aria2) ~/
 ln -svf $(realpath ./.vimrc) ~/
