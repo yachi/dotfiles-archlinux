@@ -74,6 +74,10 @@ function adbpush
   end
 end
 
+function aw
+  awk "{print \$$argv}"
+end
+
 # random values
 set -x EDITOR vim
 set -x USE_CCACHE 1
