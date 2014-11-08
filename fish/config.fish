@@ -24,7 +24,7 @@ set PATH /opt/google-cloud-sdk/bin $PATH
 set -x GOPATH $HOME/go
 set -x GOARCH amd64
 set -x GOOS linux
-set -x PATH $GOPATH $PATH
+set -x PATH $GOPATH/bin $PATH
 
 # init z
 source ~/github/dotfiles/z-fish/z.fish
