@@ -17,9 +17,14 @@ set fish_plugins bundler gi extract
 source $fish_path/oh-my-fish.fish
 
 # set paths
+set PATH /usr/local/bin $PATH
 set PATH ~/.local/bin $PATH
 set PATH /opt/android-sdk/platform-tools $PATH
 set PATH /opt/google-cloud-sdk/bin $PATH
+set -x GOPATH $HOME/go
+set -x GOARCH amd64
+set -x GOOS linux
+set -x PATH $GOPATH $PATH
 
 # init z
 source ~/github/dotfiles/z-fish/z.fish
