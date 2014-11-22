@@ -66,6 +66,12 @@ function gmdd
   git branch --merged | grep "\b/\b" | xargs -r git branch -d
 end
 
+function gpp
+  for a in {master,develop}
+    git checkout $a; and git push
+  end; and git push --tags
+end
+
 function adbpush
   set d /sdcard/Download/
   for f in $argv
