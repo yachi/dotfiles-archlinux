@@ -31,6 +31,7 @@ source ~/github/dotfiles/z-fish/z.fish
 
 # init fry
 source /usr/share/fish/fry.fish
+fry ruby-2.1.5 > /dev/null
 fry config auto on > /dev/null
 
 # init virtualfish
