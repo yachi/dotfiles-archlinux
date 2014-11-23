@@ -72,6 +72,12 @@ function gpp
   end; and git push --tags
 end
 
+function gupp
+  for a in {master,develop}
+    git checkout $a; and git pull --ff --ff-only
+  end
+end
+
 function adbpush
   set d /sdcard/Download/
   for f in $argv
