@@ -4,3 +4,4 @@ gems.tags
 stdlib.tags
 tags
 .netrwhist
+.aria2/dht.dat
