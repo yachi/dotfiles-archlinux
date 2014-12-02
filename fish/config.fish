@@ -38,7 +38,10 @@ fry config auto on > /dev/null
 source ~/github/dotfiles/virtualfish/virtual.fish
 
 # solarized dircolors
-eval (dircolors -c /etc/dir_colors | sed 's/env/ -x/')
+# eval (dircolors -c /etc/dir_colors | sed 's/env/ -x/')
+
+# Base16 Shell
+eval sh /usr/share/base16-shell/base16-3024.dark.sh
 
 # alt+. = last argument
 function fish_user_key_bindings
