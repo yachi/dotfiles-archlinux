@@ -70,13 +70,13 @@ function gmdd
   git branch --merged | grep "\b/\b" | xargs -r git branch -d
 end
 
-function gpp
+function gfpp
   for a in {master,develop}
     git checkout $a; and git push
   end; and git push --tags
 end
 
-function gupp
+function gfup
   for a in {master,develop}
     git checkout $a; and git pull --ff --ff-only
   end
