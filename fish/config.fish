@@ -132,6 +132,9 @@ function work_in_progress
     echo "WIP!!"
   end
 end
+function tm
+  tmux attach; or tmux
+end
 alias gwip='git add -A; git ls-files --deleted -z | xargs -r -0 git rm; git commit -m "wip"'
 alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'
 
