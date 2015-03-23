@@ -135,6 +135,9 @@ end
 function tm
   tmux attach; or tmux
 end
+function prax_forward
+  sudo iptables -t nat -I OUTPUT -p tcp -o lo --dport 80 -j REDIRECT --to-ports 20559
+end
 alias gwip='git add -A; git ls-files --deleted -z | xargs -r -0 git rm; git commit -m "wip"'
 alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'
 
