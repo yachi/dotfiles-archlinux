@@ -1,3 +1,7 @@
+set t_8b="\e[38;2;%lu;%lu;%lum]"
+set t_8f="\e[48;2;%lu;%lu;%lum]"
+set guicolors
+
 let g:dotvim_settings = {}
 let g:dotvim_settings.version = 1
 let g:dotvim_settings.plugin_groups_exclude = []
