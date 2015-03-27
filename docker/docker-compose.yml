@@ -1,0 +1,9 @@
+postgresdata:
+  build: ./postgres-data
+postgres:
+  image: sameersbn/postgresql
+  volumes_from:
+    - postgresdata
+  ports:
+    - "5432:5432"
+  restart: always
