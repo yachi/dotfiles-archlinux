@@ -8,7 +8,7 @@ set fish_path $HOME/.oh-my-fish
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
-set fish_plugins bundler gi extract
+set fish_plugins bundler gi extract emoji-clock peco
 
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
@@ -50,7 +50,8 @@ end
 
 # powerline shell
 function fish_prompt
-    python2.7 ~/github/dotfiles/powerline-shell.py $status --shell bare ^/dev/null
+  python2.7 ~/github/dotfiles/powerline-shell.py $status --shell bare ^/dev/null
+  echo (emoji-clock)"  "
 end
 
 # vim default open dir
@@ -144,5 +145,7 @@ alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'
 alias bi='bundle install'
 alias bu='bundle update'
 alias be='bundle exec'
+
+alias rm='safe-rm'
 
 set fish_user_abbreviations $fish_user_abbreviations 'pie=perl -p -i -e "s###g"'
