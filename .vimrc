@@ -14,6 +14,8 @@ source ~/.vim/vimrc
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep= "\ue0b0"
+let g:ctrlp_user_command = 'git --git-dir=%s/.git ls-files -oc --exclude-standard'
+let g:ctrlp_use_caching = 0
 
 set relativenumber
 set number
