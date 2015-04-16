@@ -122,6 +122,7 @@ set fish_user_abbreviations $fish_user_abbreviations 'gffr=git flow feature reba
 set fish_user_abbreviations $fish_user_abbreviations 'sc=systemctl'
 set fish_user_abbreviations $fish_user_abbreviations 'ssc=sudo systemctl'
 set fish_user_abbreviations $fish_user_abbreviations 'rrg=rake routes | grep'
+set fish_user_abbreviations $fish_user_abbreviations 'drw=docker-compose run --rm web'
 
 # osx pbcopy
 alias pbcopy='xsel --clipboard --input'
