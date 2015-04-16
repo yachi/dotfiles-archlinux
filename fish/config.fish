@@ -51,7 +51,6 @@ end
 # powerline shell
 function fish_prompt
   python2.7 ~/github/dotfiles/powerline-shell.py $status --shell bare ^/dev/null
-  echo (emoji-clock)"  "
 end
 
 # vim default open dir
