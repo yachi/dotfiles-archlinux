@@ -19,3 +19,6 @@ let g:ctrlp_use_caching = 0
 
 set relativenumber
 set number
+
+set background=dark
+colorscheme base16-paraiso

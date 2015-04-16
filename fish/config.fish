@@ -41,7 +41,7 @@ source ~/github/dotfiles/virtualfish/virtual.fish
 # eval (dircolors -c /etc/dir_colors | sed 's/env/ -x/')
 
 # Base16 Shell
-eval sh /usr/share/base16-shell/base16-3024.dark.sh
+eval sh /usr/share/base16-shell/base16-paraiso.dark.sh
 
 # alt+. = last argument
 function fish_user_key_bindings
