@@ -9,7 +9,7 @@
 	url = https://github.com/roryokane/z-fish.git
 [submodule "powerline-shell"]
 	path = powerline-shell
-	url = https://github.com/qwindelzorf/powerline-shell
+	url = https://github.com/milkbikis/powerline-shell
 [submodule "git-flow-completion"]
 	path = git-flow-completion
 	url = https://github.com/bobthecow/git-flow-completion.git
