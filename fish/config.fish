@@ -27,7 +27,7 @@ set -x GOOS linux
 set -x PATH $GOPATH/bin $PATH
 
 # init z
-source ~/github/dotfiles/z-fish/z.fish
+source ~/.dotfiles/z-fish/z.fish
 
 # init fry
 source /usr/share/fish/fry.fish
@@ -35,7 +35,7 @@ fry ruby-2.2.2 > /dev/null
 fry config auto on > /dev/null
 
 # init virtualfish
-source ~/github/dotfiles/virtualfish/virtual.fish
+source ~/.dotfiles/virtualfish/virtual.fish
 
 # solarized dircolors
 # eval (dircolors -c /etc/dir_colors | sed 's/env/ -x/')
@@ -50,7 +50,7 @@ end
 
 # powerline shell
 function fish_prompt
-  python2.7 ~/github/dotfiles/powerline-shell.py $status --shell bare ^/dev/null
+  python2 ~/.dotfiles/powerline-shell.py $status --shell bare ^/dev/null
 end
 
 # vim default open dir
