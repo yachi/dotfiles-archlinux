@@ -11,8 +11,10 @@ ln -svf $(realpath ./.vimrc) ~/
 test -d ~/.vim || ln -svf $(realpath ./dotvim/) ~/.vim/
 git submodule update --init --recursive
 
-sudo pacman -Sy base-devel \
+yaourt -S base-devel \
   fish \
   python \
   python2 \
   safe-rm \
+  fry \
+  --noconfirm
