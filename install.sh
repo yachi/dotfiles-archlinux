@@ -1,6 +1,8 @@
-#!/bin/sh
-[ -d ~/.config ] || mkdir -p ~/.config
-[ -L ~/.config/fish ] || ln -svf $(realpath ./fish) ~/.config/fish
+#!/bin/bash
+[ -d ~/.config  ] || mkdir -p ~/.config
+[ -L ~/.config/omf  ] || ln -svf $(realpath ./omf)/ ~/.config/omf/
+
+curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 
 ln -svf $(realpath ./.gitconfig) ~/.gitconfig
 ln -svf $(realpath ./.gitignore) ~/.gitignore
@@ -15,6 +17,8 @@ yaourt -S base-devel \
   fish \
   python \
   python2 \
-  safe-rm \
+  postgresql \
   fry \
+  safe-rm \
+  gitflow-avh \
   --noconfirm
