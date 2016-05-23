@@ -15,6 +15,7 @@ git submodule update --init --recursive
 
 yaourt -S base-devel \
   fish \
+  peco \
   python \
   python2 \
   postgresql \

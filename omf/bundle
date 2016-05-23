@@ -1,2 +1,5 @@
 package bundler
+package extract
+package gi
+package peco
 theme default
