@@ -86,6 +86,7 @@ set -gx TERM screen-256color
 # abbreviations
 set -U fish_user_abbreviations 'v=vim'
 set fish_user_abbreviations $fish_user_abbreviations 'g=git'
+set fish_user_abbreviations $fish_user_abbreviations 'gdf=git dsf'
 set fish_user_abbreviations $fish_user_abbreviations 'gst=git status'
 set fish_user_abbreviations $fish_user_abbreviations 'gd=git diff'
 set fish_user_abbreviations $fish_user_abbreviations 'gdc=git diff --cached'
