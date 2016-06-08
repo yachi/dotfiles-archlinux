@@ -12,7 +12,7 @@ set -x PATH $GOPATH/bin $PATH
 source ~/.dotfiles/z-fish/z.fish
 
 # init fry
-source /usr/share/fish/fry.fish
+source /usr/share/fish/vendor_conf.d/fry.fish
 fry ruby-2.3.1 > /dev/null
 fry config auto on > /dev/null
 
