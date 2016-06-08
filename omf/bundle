@@ -2,4 +2,5 @@ package bundler
 package extract
 package gi
 package peco
+theme bobthefish
 theme default

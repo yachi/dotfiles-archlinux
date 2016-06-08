@@ -30,11 +30,6 @@ function fish_user_key_bindings
     bind \e. 'history-token-search-backward'
 end
 
-# powerline shell
-function fish_prompt
-  python2 ~/.dotfiles/powerline-shell.py $status --shell bare ^/dev/null
-end
-
 # vim default open dir
 function vim
   if count $argv > /dev/null
