@@ -1,6 +1,10 @@
-set t_8b="\e[38;2;%lu;%lu;%lum]"
-set t_8f="\e[48;2;%lu;%lu;%lum]"
-set guicolors
+if has('nvim')
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+else
+  set t_8b="\e[38;2;%lu;%lu;%lum]"
+  set t_8f="\e[48;2;%lu;%lu;%lum]"
+  set guicolors
+endif
 
 let g:dotvim_settings = {}
 let g:dotvim_settings.version = 1

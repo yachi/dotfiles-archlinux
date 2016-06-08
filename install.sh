@@ -11,6 +11,9 @@ ln -svf $(realpath ./.aria2) ~/
 ln -svf $(realpath ./.vimrc) ~/
 
 test -d ~/.vim || ln -svf $(realpath ./dotvim/) ~/.vim/
+
+mkdir -p ~/.config
+test -d ~/.config/nvim || ln -svf $(realpath ./dotvim/) ~/.config/nvim
 git submodule update --init --recursive
 
 yaourt -S base-devel \
