@@ -101,6 +101,7 @@ set fish_user_abbreviations $fish_user_abbreviations 'ssc=sudo systemctl'
 set fish_user_abbreviations $fish_user_abbreviations 'rrg=rake routes | grep'
 set fish_user_abbreviations $fish_user_abbreviations 'drw=docker-compose run --rm web'
 set fish_user_abbreviations $fish_user_abbreviations 'le=less -R'
+set fish_user_abbreviations $fish_user_abbreviations 'lsd=lynx -stdin -dump'
 
 # osx pbcopy
 alias pbcopy='xsel --clipboard --input'
