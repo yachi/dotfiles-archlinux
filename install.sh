@@ -16,6 +16,8 @@ mkdir -p ~/.config
 test -d ~/.config/nvim || ln -svf $(realpath ./dotvim/) ~/.config/nvim
 git submodule update --init --recursive
 
+mkdir -p ~/go/bin
+
 yaourt -S base-devel \
   fish \
   peco \
