@@ -48,14 +48,24 @@ function gmdd
 end
 
 function gfpp
-  for a in {master,develop}
-    git checkout $a; and git push
-  end; and git push --tags
+  begin
+    set -lx OVERCOMMIT_DISABLE 1
+    for a in {master,develop}
+      git checkout $a; and git push
+    end; and git push --tags
+  end
 end
 
 function gfup
   for a in {master,develop}
     git checkout $a; and git pull --ff --ff-only
+  end
+end
+
+function goup
+  begin
+    set -lx OVERCOMMIT_DISABLE 1
+    git up
   end
 end
 
@@ -95,8 +105,7 @@ set fish_user_abbreviations $fish_user_abbreviations 'gsup=git submodule update 
 set fish_user_abbreviations $fish_user_abbreviations 'gf=git flow'
 set fish_user_abbreviations $fish_user_abbreviations 'gffs=git flow feature start'
 set fish_user_abbreviations $fish_user_abbreviations 'gffp=git flow feature publish'
-set fish_user_abbreviations $fish_user_abbreviations 'gffr=git flow feature rebase'
-set fish_user_abbreviations $fish_user_abbreviations 'gffr=git flow feature rebase'
+set fish_user_abbreviations $fish_user_abbreviations 'gffr=env OVERCOMMIT_DISABLE=1 git flow feature rebase'
 set fish_user_abbreviations $fish_user_abbreviations 'sc=systemctl'
 set fish_user_abbreviations $fish_user_abbreviations 'ssc=sudo systemctl'
 set fish_user_abbreviations $fish_user_abbreviations 'rrg=rake routes | grep'
