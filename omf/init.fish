@@ -25,6 +25,10 @@ source ~/.dotfiles/virtualfish/virtual.fish
 # Base16 Shell
 eval sh /usr/share/base16-shell/base16-paraiso.dark.sh
 
+# ssh-agent
+eval (ssh-agent -c)
+ssh-add ~/.ssh/id_rsa
+
 # alt+. = last argument
 function fish_user_key_bindings
     bind \e. 'history-token-search-backward'
@@ -62,11 +66,33 @@ function gfup
   end
 end
 
+function gff
+  begin
+    set -lx OVERCOMMIT_DISABLE 1
+    git flow finish
+  end
+end
+
 function goup
   begin
     set -lx OVERCOMMIT_DISABLE 1
+    set branch (git rev-parse --abbrev-ref HEAD)
+    git checkout qa
+    git checkout develop
+    git branch -D qa
     git up
+    git checkout $branch
   end
+end
+
+function gmqa
+  set -lx OVERCOMMIT_DISABLE 1
+  set branch (git rev-parse --abbrev-ref HEAD)
+  goup
+  git stash
+  git branch -D qa
+  git checkout qa
+  git merge $branch; and git push; and bundle exec cap staging deploy
 end
 
 function adbpush
@@ -81,15 +107,22 @@ function aw
   awk "{print \$$argv}"
 end
 
+function bd
+  sed -i '/ ap /d' (git status --short|awk '{print $2}')
+  sed -i '/ byebug/d' (git status --short|awk '{print $2}')
+  sed -i '/ console\.debug/d' (git status --short|awk '{print $2}')
+  sed -i '/ console\.log/d' (git status --short|awk '{print $2}')
+end
+
 # random values
-set -x EDITOR vim
+set -x EDITOR (which wnvim ;or which vim)
 set -x USE_CCACHE 1
 set -x MAKEFLAGS -j8
 set -x CLOUDSDK_PYTHON /usr/bin/python2
 set -gx TERM screen-256color
 
 # abbreviations
-set -U fish_user_abbreviations 'v=nvim'
+set -U fish_user_abbreviations 'v=nvim -o'
 set fish_user_abbreviations $fish_user_abbreviations 'g=git'
 set fish_user_abbreviations $fish_user_abbreviations 'gdf=git dsf'
 set fish_user_abbreviations $fish_user_abbreviations 'gst=git status'
@@ -113,9 +146,13 @@ set fish_user_abbreviations $fish_user_abbreviations 'dc=docker-compose'
 set fish_user_abbreviations $fish_user_abbreviations 'dcl=docker-compose logs'
 set fish_user_abbreviations $fish_user_abbreviations 'drw=docker-compose run --rm web'
 set fish_user_abbreviations $fish_user_abbreviations 'drws=docker-compose run --rm web bin/spring'
+set fish_user_abbreviations $fish_user_abbreviations 'dew=docker-compose exec web'
+set fish_user_abbreviations $fish_user_abbreviations 'dewb=docker-compose exec web bundle'
+set fish_user_abbreviations $fish_user_abbreviations 'dews=docker-compose exec web bin/spring'
+set fish_user_abbreviations $fish_user_abbreviations "dap=sed -i '/ ap /d' (git status --short|awk '{print \$2}')"
 set fish_user_abbreviations $fish_user_abbreviations 'le=less -R'
 set fish_user_abbreviations $fish_user_abbreviations 'lsd=lynx -stdin -dump'
-set fish_user_abbreviations $fish_user_abbreviations 'os=overcommit --sign'
+set fish_user_abbreviations $fish_user_abbreviations 'os=env BUNDLE_GEMFILE=.overcommit_gems.rb bundle exec overcommit --sign'
 set fish_user_abbreviations $fish_user_abbreviations 'od=env OVERCOMMIT_DISABLE=1'
 
 # osx pbcopy
@@ -140,12 +177,18 @@ function drwr
 end
 
 function drwdb
+  docker-compose run                   --rm web bash -c 'bundle check || bundle'
   docker-compose run                   --rm web bin/spring rake db:setup
   docker-compose run -e RAILS_ENV=test --rm web bin/spring rake db:setup
 end
 
+function gfc
+  git status --short | awk "{print \$2}"
+end
+
 alias gwip='git add -A; git ls-files --deleted -z | xargs -r -0 git rm; git commit -m "wip"'
 alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'
+alias gdq='git checkout develop; and git branch -D qa'
 
 alias bi='bundle install'
 alias bu='bundle update'
@@ -154,3 +197,11 @@ alias be='bundle exec'
 alias rm='safe-rm'
 
 set fish_user_abbreviations $fish_user_abbreviations 'pie=perl -p -i -e "s###g"'
+
+# man page with color
+set -xU LESS_TERMCAP_md (printf "\e[01;31m")
+set -xU LESS_TERMCAP_me (printf "\e[0m")
+set -xU LESS_TERMCAP_se (printf "\e[0m")
+set -xU LESS_TERMCAP_so (printf "\e[01;44;33m")
+set -xU LESS_TERMCAP_ue (printf "\e[0m")
+set -xU LESS_TERMCAP_us (printf "\e[01;32m")
