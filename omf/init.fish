@@ -186,6 +186,10 @@ function gfc
   git status --short | awk "{print \$2}"
 end
 
+function fish_prompt
+  ~/.dotfiles/powerline-shell.py $status --shell bare ^/dev/null
+end
+
 alias gwip='git add -A; git ls-files --deleted -z | xargs -r -0 git rm; git commit -m "wip"'
 alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'
 alias gdq='git checkout develop; and git branch -D qa'
