@@ -1,8 +1,6 @@
 # set paths
 set PATH /usr/local/bin $PATH
-set PATH ~/.local/bin $PATH
 set PATH /opt/android-sdk/platform-tools $PATH
-set PATH /opt/google-cloud-sdk/bin $PATH
 set -gx GOPATH $HOME/go
 set -gx GOARCH amd64
 set -gx GOOS linux
@@ -17,17 +15,17 @@ fry ruby-2.3.1 > /dev/null
 fry config auto on > /dev/null
 
 # init virtualfish
-source ~/.dotfiles/virtualfish/virtual.fish
+source ~/.dotfiles/virtualfish/virtualfish/virtual.fish
 
 # solarized dircolors
 # eval (dircolors -c /etc/dir_colors | sed 's/env/ -x/')
 
 # Base16 Shell
-eval sh /usr/share/base16-shell/base16-paraiso.dark.sh
+# eval sh /usr/share/base16-shell/base16-paraiso.dark.sh
 
 # ssh-agent
-eval (ssh-agent -c)
-ssh-add ~/.ssh/id_rsa
+eval (ssh-agent -c) > /dev/null ^ /dev/null
+ssh-add ~/.ssh/id_rsa > /dev/null ^ /dev/null
 
 # alt+. = last argument
 function fish_user_key_bindings
@@ -115,7 +113,7 @@ function bd
 end
 
 # random values
-set -x EDITOR (which wnvim ;or which vim)
+set -x EDITOR (which nvim ;or which vim)
 set -x USE_CCACHE 1
 set -x MAKEFLAGS -j8
 set -x CLOUDSDK_PYTHON /usr/bin/python2
