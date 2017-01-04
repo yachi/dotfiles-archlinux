@@ -10,10 +10,10 @@ ln -svf $(realpath ./.gemrc) ~/
 ln -svf $(realpath ./.aria2) ~/
 ln -svf $(realpath ./.vimrc) ~/
 
-test -d ~/.vim || ln -svf $(realpath ./dotvim/) ~/.vim/
+test -d ~/.vim || ln -svf $(realpath ./nvim/) ~/.vim/
 
 mkdir -p ~/.config
-test -d ~/.config/nvim || ln -svf $(realpath ./dotvim/) ~/.config/nvim
+test -d ~/.config/nvim || ln -svf $(realpath ./nvim/) ~/.config/nvim
 git submodule update --init --recursive
 
 mkdir -p ~/go/bin

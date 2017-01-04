@@ -1,9 +1,6 @@
 [submodule "virtualfish"]
 	path = virtualfish
 	url = https://github.com/adambrenecki/virtualfish.git
-[submodule "dotvim"]
-	path = dotvim
-	url = https://github.com/yachi/dotvim.git
 [submodule "z-fish"]
 	path = z-fish
 	url = https://github.com/roryokane/z-fish.git
@@ -13,3 +10,6 @@
 [submodule "git-flow-completion"]
 	path = git-flow-completion
 	url = https://github.com/bobthecow/git-flow-completion.git
+[submodule "nvim"]
+	path = nvim
+	url = git@github.com:yachi/nvim.git
