@@ -7,7 +7,7 @@
 	default = simple
 [core]
 	excludesfile = /home/yachi/.gitignore
-	editor = vim
+	editor = nvim
 	pager = /usr/share/git/diff-highlight/diff-highlight | less -FRX
 [tag]
 	sort = version:refname
