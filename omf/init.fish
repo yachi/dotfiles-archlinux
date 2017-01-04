@@ -90,7 +90,7 @@ function gmqa
   git stash
   git branch -D qa
   git checkout qa
-  git merge $branch; and git push; and bundle exec cap staging deploy
+  git merge $branch; and git push; and fish -c 'bundle check; or bundle install'
 end
 
 function adbpush
@@ -192,7 +192,7 @@ alias gwip='git add -A; git ls-files --deleted -z | xargs -r -0 git rm; git comm
 alias gunwip='git log -n 1 | grep -q -c wip; and git reset HEAD~1'
 alias gdq='git checkout develop; and git branch -D qa'
 
-alias bi='bundle install'
+alias bi='bundle check; or bundle install'
 alias bu='bundle update'
 alias be='bundle exec'
 
