@@ -13,3 +13,4 @@
 	sort = version:refname
 [alias]
   dsf = "!f() { [ \"$GIT_PREFIX\" != \"\"  ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX;  }; f"
+  up = "!f() { python3 /home/yachi/.local/lib/python3*/site-packages/PyGitUp/gitup.py; }; f"

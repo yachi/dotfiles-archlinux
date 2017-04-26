@@ -1,17 +1,21 @@
 # set paths
+set PATH ~/.local/bin $PATH
 set PATH /usr/local/bin $PATH
 set PATH /opt/android-sdk/platform-tools $PATH
 set -gx GOPATH $HOME/go
 set -gx GOARCH amd64
 set -gx GOOS linux
 set -gx PATH $GOPATH/bin $PATH
+set -gx NVM_DIR $HOME/.nvm
+
+set -g theme_nerd_fonts yes
 
 # init z
 source ~/.dotfiles/z-fish/z.fish
 
 # init fry
 source /usr/share/fish/vendor_conf.d/fry.fish
-fry ruby-2.3.1 > /dev/null
+fry ruby-2.4.0 > /dev/null
 fry config auto on > /dev/null
 
 # init virtualfish
@@ -127,6 +131,7 @@ set fish_user_abbreviations $fish_user_abbreviations 'gst=git status'
 set fish_user_abbreviations $fish_user_abbreviations 'gd=git diff'
 set fish_user_abbreviations $fish_user_abbreviations 'gdc=git diff --cached'
 set fish_user_abbreviations $fish_user_abbreviations 'gp=git push'
+set fish_user_abbreviations $fish_user_abbreviations 'gm=git merge --no-ff'
 set fish_user_abbreviations $fish_user_abbreviations 'gc=git commit -v'
 set fish_user_abbreviations $fish_user_abbreviations 'gca=git commit -av'
 set fish_user_abbreviations $fish_user_abbreviations 'gco=git checkout'
@@ -152,6 +157,7 @@ set fish_user_abbreviations $fish_user_abbreviations 'le=less -R'
 set fish_user_abbreviations $fish_user_abbreviations 'lsd=lynx -stdin -dump'
 set fish_user_abbreviations $fish_user_abbreviations 'os=env BUNDLE_GEMFILE=.overcommit_gems.rb bundle exec overcommit --sign'
 set fish_user_abbreviations $fish_user_abbreviations 'od=env OVERCOMMIT_DISABLE=1'
+set fish_user_abbreviations $fish_user_abbreviations 't=trans'
 
 # osx pbcopy
 alias pbcopy='xsel --clipboard --input'
@@ -175,9 +181,28 @@ function drwr
 end
 
 function drwdb
+  docker-compose stop db
+  docker-compose rm -f db
   docker-compose run                   --rm web bash -c 'bundle check || bundle'
-  docker-compose run                   --rm web bin/spring rake db:setup
-  docker-compose run -e RAILS_ENV=test --rm web bin/spring rake db:setup
+  parallel ::: \
+    "docker-compose run --rm web bin/spring rake db:setup" \
+    "sleep 1; docker-compose run -e RAILS_ENV=test --rm web bin/spring rake db:setup" \
+    "docker-compose up -d"
+end
+
+function drwrs
+   docker-compose stop
+   docker-compose rm -v
+   docker-compose run --rm web bash -lc 'gem install bundler; bundle install -j128'
+   docker-compose up -d
+end
+
+function nfish
+  nvim (status -f)
+end
+
+function gls
+  git log --oneline --author='yaa\?chi' --since="$argv[1] days ago"
 end
 
 function gfc
